@@ -46,7 +46,7 @@ public class FileSystemUtils {
         File dataFile = createFileInDir(targetDir);
 
         Files.write(dataFile.toPath(), elements, Charset.defaultCharset());
-        LOG.debug("Successfully written data to file {}", dataFile.getAbsolutePath());
+        LOG.warn("Successfully written data to file {}", dataFile.getAbsolutePath());
 
         return dataFile;
     }

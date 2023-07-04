@@ -359,13 +359,13 @@ public class PinotSinkCommitter implements Committer<PinotSinkCommittable> {
             File segmentFile = null;
             try {
                 // Download data file from the shared filesystem
-                LOG.debug("Downloading data file {} from shared file system...", dataFilePath);
+                LOG.warn("Downloading data file {} from shared file system...", dataFilePath);
                 List<String> serializedElements = fsAdapter.readFromSharedFileSystem(dataFilePath);
                 segmentData = FileSystemUtils.writeToLocalFile(serializedElements, tempDirectory);
-                LOG.debug("Successfully downloaded data file {} from shared file system", dataFilePath);
+                LOG.warn("Successfully downloaded data file {} from shared file system", dataFilePath);
 
                 segmentFile = FileSystemUtils.createFileInDir(tempDirectory);
-                LOG.debug("Creating segment in " + segmentFile.getAbsolutePath());
+                LOG.warn("Creating segment in " + segmentFile.getAbsolutePath());
 
                 // Creates a segment with name `segmentName` in `segmentFile`
                 generateSegment(segmentData, segmentFile, true);
