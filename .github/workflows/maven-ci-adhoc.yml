@@ -29,6 +29,7 @@ on:
           - info
           - warning
           - error
+          - debug
 
 jobs:
   build:
