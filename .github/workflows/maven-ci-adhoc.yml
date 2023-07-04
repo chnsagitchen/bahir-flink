@@ -41,7 +41,16 @@ jobs:
         java: ['8', '11']
         flink-version: ['1.17.0']
         connector: [
-          'flink-connector-pinot'
+          'flink-connector-activemq',
+          'flink-connector-akka',
+          'flink-connector-flume',
+          'flink-connector-influxdb',
+          'flink-connector-influxdb2',
+          'flink-connector-kudu',
+          'flink-connector-netty',
+          'flink-connector-pinot',
+          'flink-connector-redis',
+          'flink-library-siddhi'
         ]
 
     steps:
